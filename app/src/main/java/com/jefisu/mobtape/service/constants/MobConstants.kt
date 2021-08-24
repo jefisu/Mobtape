@@ -11,6 +11,10 @@ class MobConstants {
             const val USER_NAME = "personname"
         }
 
+        object RETROFIT {
+            const val BASE_URL = "http://devmasterteam.com/CursoAndroidAPI/"
+        }
+
         object HTTP {
             const val SUCCESS = 200
         }
