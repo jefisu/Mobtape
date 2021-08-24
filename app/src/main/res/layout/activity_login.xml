@@ -40,11 +40,13 @@
         app:boxCornerRadiusTopStart="16dp"
         app:boxStrokeColor="@color/black"
         app:endIconMode="clear_text"
-        app:hintTextColor="@color/black"
-        app:startIconDrawable="@drawable/ic_email">
+        app:hintTextColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_login"
+            android:drawableStart="@drawable/ic_email"
+            android:drawableTint="#777695"
+            android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
@@ -68,14 +70,16 @@
         app:boxCornerRadiusTopStart="16dp"
         app:boxStrokeColor="@color/black"
         app:hintTextColor="@color/black"
-        app:endIconMode="password_toggle"
-        app:startIconDrawable="@drawable/ic_email">
+        app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/senha"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableTint="#777695"
+            android:drawablePadding="8dp"
             android:inputType="textPassword"
             android:textSize="20sp" />
 

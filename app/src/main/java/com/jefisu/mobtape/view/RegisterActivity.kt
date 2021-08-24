@@ -12,5 +12,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
     }
 }
