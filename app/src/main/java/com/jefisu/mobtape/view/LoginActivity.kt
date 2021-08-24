@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         observe()
 
         // Verifica se usuário está logado
-//        verifyLoggedUser()
+        verifyLoggedUser()
     }
 
     /**
@@ -47,13 +47,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             }
         })
+        mViewModel.loggedUser.observe(this, Observer {
+            if (it) {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+        })
     }
 
     /**
      * Verifica se usuário está logado
      */
     private fun verifyLoggedUser() {
-//        mViewModel.verifyLoggedUser()
+        mViewModel.verifyLoggedUser()
     }
 
     /**
