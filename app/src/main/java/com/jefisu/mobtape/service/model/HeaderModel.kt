@@ -8,7 +8,7 @@ class HeaderModel {
     lateinit var token: String
 
     @SerializedName("personKey")
-    lateinit var personKey: String
+    lateinit var userKey: String
 
     @SerializedName("name")
     lateinit var name: String

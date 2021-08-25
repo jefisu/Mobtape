@@ -13,7 +13,7 @@ import com.jefisu.mobtape.service.repository.local.SharedPreferences
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val mRepository = UserRepository(application)
+    private val mUserRepository = UserRepository(application)
     private val mSharedPreferences = SharedPreferences(application)
 
     private val mLogin = MutableLiveData<ValidationListener>()
@@ -25,20 +25,18 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * Faz login usando API
      */
-    fun doLogin (email: String, password: String) {
-        mRepository.login(email, password, object : APIListener {
-
-            override fun onSucess(model: HeaderModel) {
-                mSharedPreferences.save(SHARED.TOKEN_KEY, model.token)
-                mSharedPreferences.save(SHARED.USER_KEY, model.token)
-                mSharedPreferences.save(SHARED.USER_NAME, model.token)
+    fun doLogin(email: String, password: String) {
+        mUserRepository.login(email, password, object : APIListener {
+            override fun onSucess(result: HeaderModel) {
+                mSharedPreferences.save(SHARED.TOKEN_KEY, result.token)
+                mSharedPreferences.save(SHARED.USER_KEY, result.userKey)
+                mSharedPreferences.save(SHARED.USER_NAME, result.name)
 
                 mLogin.value = ValidationListener()
-
             }
 
-            override fun onFailure(str: String) {
-                mLogin.value = ValidationListener(str)
+            override fun onFailure(message: String) {
+                mLogin.value = ValidationListener(message)
             }
 
         })
@@ -48,10 +46,13 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
      * Verifica se usuário está logado
      */
     fun verifyLoggedUser() {
-        val token = mSharedPreferences.get(SHARED.TOKEN_KEY)
-        val user = mSharedPreferences.get(SHARED.USER_KEY)
+        val tokenKey = mSharedPreferences.get(SHARED.TOKEN_KEY)
+        val userKey = mSharedPreferences.get(SHARED.USER_KEY)
 
-        val logged = (token !=  "" &&  user != "")
+        // Se token e user key forem diferentes de vazio, usuário está logado
+        val logged = (tokenKey != "" && userKey != "")
+
+        // Atualiza o valor
         mLoggedUser.value = logged
     }
 }

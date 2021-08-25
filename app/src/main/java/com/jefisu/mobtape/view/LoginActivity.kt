@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         mViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         // Inicializa eventos
-        setListeners();
+        listeners();
         observe()
 
         // Verifica se usuário está logado
@@ -42,6 +42,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         mViewModel.login.observe(this, Observer {
             if (it.success()) {
                 startActivity(Intent(this, MainActivity::class.java))
+                overridePendingTransition(R.anim.in_out_enter, R.anim.in_out_exit)
+                finish()
             } else {
                 val message = it.failure()
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
@@ -50,6 +52,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         mViewModel.loggedUser.observe(this, Observer {
             if (it) {
                 startActivity(Intent(this, MainActivity::class.java))
+                overridePendingTransition(R.anim.in_out_enter, R.anim.in_out_exit)
+                finish()
             }
         })
     }
@@ -74,17 +78,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     /**
      * Inicializa os eventos de click
      */
-    private fun setListeners() {
+    private fun listeners() {
        binding.textNotRegister.setOnClickListener(this)
         binding.imageAccess.setOnClickListener(this)
     }
-
 
     override fun onClick(v: View) {
         if (v.id == R.id.image_access) {
             handleLogin()
         } else if (v.id == R.id.text_not_register) {
             startActivity(Intent(this, RegisterActivity::class.java))
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+            finish()
         }
     }
 }
