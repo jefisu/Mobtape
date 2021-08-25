@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/cadastro"
+        android:text="@string/REGISTRATION"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
             android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nome"
+            android:hint="@string/NAME"
             android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -75,11 +75,10 @@
             android:id="@+id/text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="@string/EMAIL"
             android:drawableStart="@drawable/ic_email"
             android:drawableTint="#777695"
-            android:drawablePadding="8dp
-"
+            android:drawablePadding="8dp"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +101,7 @@
             android:id="@+id/text_password_r"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/senha"
+            android:hint="@string/PASSWORD"
             android:drawableStart="@drawable/ic_lock"
             android:drawableTint="#777695"
             android:drawablePadding="8dp"
@@ -131,7 +130,7 @@
             android:drawableStart="@drawable/ic_lock"
             android:drawableTint="#777695"
             android:drawablePadding="8dp"
-            android:hint="@string/confirme_sua_senha"
+            android:hint="@string/CONFIRM_YOUR_PASSWORD"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,7 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginEnd="30dp"
-        android:text="@string/exibir_senha"
+        android:text="@string/SHOW_PASSWORD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_confirm_password" />
 
@@ -152,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
-        android:text="@string/cadastrar"
+        android:text="@string/RECORD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

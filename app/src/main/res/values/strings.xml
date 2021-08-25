@@ -3,58 +3,49 @@
 
     <string name="ERROR_UNEXPECTED">Um erro inesperado ocorreu. Tente novamente mais tarde.</string>
 
-    <string name="tipo_de_servico">Tipo de serviço</string>
-    <string name="celular">Celular</string>
-    <string name="cpf">CPF</string>
-    <string name="cliente">Cliente</string>
-    <string name="cadastrar_servico">Cadastrar serviço</string>
-    <string name="categoria">Categoria</string>
-    <string name="cadastrar">Cadastrar</string>
-    <string name="atualizar">ATUALIZAR</string>
-    <string name="cancelar">CANCELAR</string>
-    <string name="atualiza_registro">Atualiza registro</string>
-    <string name="preencha_os_campos">Preencha os campos</string>
-    <string name="nome">Nome</string>
-    <string name="sobrenome">Sobrenome</string>
-    <string name="email">E-mail</string>
-    <string name="senha">Senha</string>
-    <string name="confirme_sua_senha">Confirme sua senha</string>
-    <string name="bem_vindo_de_volta">Bem-vindo de volta</string>
-    <string name="faca_login_para_comecar">Faça login para começar</string>
-    <string name="entrar">Entrar</string>
-    <string name="ainda_nao_tem_cadastro">Ainda não tem cadastro?</string>
-    <string name="cadastre_se">Cadastre-se.</string>
-    <string name="zero">0</string>
-    <string name="preenchiment_nome_invalido">Preenchimento do nome inválido</string>
-    <string name="preenchiment_sobrenome_invalido">Preenchimento do sobrenome inválido</string>
-    <string name="preenchiment_email_invalido">Preenchimento do e-mail inválido</string>
-    <string name="preenchiment_senha_invalido">Preenchimento da senha inválida</string>
-    <string name="senha_deve_conter">A senha deve ter entre 4 a 12 caracteres</string>
-    <string name="senha_nao_conferem">Senhas não conferem</string>
-    <string name="preenchimento_telefone_invalido">Preenchimento do Telefone inválido</string>
-    <string name="preenchimento_cpf_invalido">Preenchimento do CPF Inválido</string>
-    <string name="preenchimento_cliente_invalido">Preenchimento do cliente inválido</string>
-    <string name="registro_atualizado">Registro atualizado</string>
-    <string name="campos_preenchidos">Os campos não foram preenchidos</string>
-    <string name="sim">Sim</string>
-    <string name="registro_excluido">Registro excluído com sucesso</string>
-    <string name="nao">Não</string>
-    <string name="cadastro">Cadastro</string>
-    <string name="exibir_senha">Exibir senha</string>
-    <string name="atualizar_servico">Atualizar serviço</string>
-    <string name="bem_vindo">Bem-vindo</string>
-    <string name="prazer_em_ver_voce_de_novo">Prazer em ver você de novo!</string>
-    <string name="login">Login</string>
-    <string name="esqueci_a_senha">Esqueci a senha</string>
-    <string name="deseja_excluir_o_servico">Tem certeza de que deseja excluir o serviço?</string>
-    <string name="sair_sem_salvar">Sair sem salvar</string>
-    <string name="deseja_sair_sem_salvar">Deseja sair sem salvar os dados alterados?</string>
-    <string name="dados_nao_alterados">Os dados não foram alterados</string>
-    <string name="excluir_registro">Excluir registro</string>
-    <string name="confeccao">Confecção</string>
-    <string name="almofada">Almofada</string>
+    <string name="KIND_OF_SERVICE">Tipo de serviço</string>
+    <string name="SMARTPHONE">Celular</string>
+    <string name="CPF">CPF</string>
+    <string name="CLIENT">Cliente</string>
+    <string name="REGISTER_RECORD">Cadastrar serviço</string>
+    <string name="CATEGORY">Categoria</string>
+    <string name="RECORD">Cadastrar</string>
+    <string name="UPDATE">ATUALIZAR</string>
+    <string name="CANCEL">CANCELAR</string>
+    <string name="UPDATE_RECORD">Atualiza registro</string>
+    <string name="FILL_IN_THE_FIELDS">Preencha os campos</string>
+    <string name="NAME">Nome</string>
+    <string name="EMAIL">E-mail</string>
+    <string name="PASSWORD">Senha</string>
+    <string name="CONFIRM_YOUR_PASSWORD">Confirme sua senha</string>
+    <string name="WELCOME_BACK">Bem-vindo de volta</string>
+    <string name="LOG_IN_TO_START">Faça login para começar</string>
+    <string name="TO_ENTER">Entrar</string>
+    <string name="NO_REGISTRATION_STILL">Ainda não tem cadastro?</string>
+    <string name="REGISTER">Cadastre-se.</string>
+    <string name="PASSWORDS_DO_NOT_MATCH">Senhas não conferem</string>
+    <string name="INVALID_PHONE_FILLING">Preenchimento do Telefone inválido</string>
+    <string name="FILLING_IN_THE_INVALID_CPF">Preenchimento do CPF Inválido</string>
+    <string name="INVALID_CUSTOMER_FILLING">Preenchimento do cliente inválido</string>
+    <string name="UPDATED_REGISTRATION">Registro atualizado</string>
+    <string name="FIELDS_FILLED">Os campos não foram preenchidos</string>
+    <string name="YES">Sim</string>
+    <string name="REGISTRATION_DELETED">Registro excluído com sucesso</string>
+    <string name="NO">Não</string>
+    <string name="REGISTRATION">Cadastro</string>
+    <string name="SHOW_PASSWORD">Exibir senha</string>
+    <string name="UPDATE_SERVICE">Atualizar serviço</string>
+    <string name="WELCOME">Bem-vindo</string>
+    <string name="GOOD_SEE_YOU_AGAIN">Prazer em ver você de novo!</string>
+    <string name="LOG_IN">Login</string>
+    <string name="FORGOT_PASSWORD">Esqueci a senha</string>
+    <string name="DO_YOU_WANT_TO_DELETE_THE_SERVICE">Tem certeza de que deseja excluir o serviço?</string>
+    <string name="EXIT_WITHOUT_SAVING">Sair sem salvar</string>
+    <string name="WISH_TO_EXIT_WITHOUT_SAVING">Deseja sair sem salvar os dados alterados?</string>
+    <string name="DATA_NOT_CHANGED">Os dados não foram alterados</string>
+    <string name="DELETE_RECORD">Excluir registro</string>
 
-    <string-array name="category">
+    <string-array name="CATEGORY">
         <item>Almofada</item>
         <item>Alvenaria</item>
         <item>Cabeceira</item>
@@ -63,7 +54,7 @@
         <item>Poltrona</item>
         <item>Sofá</item>
     </string-array>
-    <string-array name="type">
+    <string-array name="TYPE">
         <item>Confecção</item>
         <item>Reforma</item>
     </string-array>

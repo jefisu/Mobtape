@@ -49,7 +49,7 @@
             android:drawablePadding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="@string/EMAIL"
             android:inputType="textEmailAddress"
             android:textSize="20sp" />
 
@@ -76,7 +76,7 @@
             android:id="@+id/text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/senha"
+            android:hint="@string/PASSWORD"
             android:drawableStart="@drawable/ic_lock"
             android:drawableTint="#777695"
             android:drawablePadding="8dp"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_input_password"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
-        android:text="@string/esqueci_a_senha"
+        android:text="@string/FORGOT_PASSWORD"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -112,7 +112,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/entrar"
+        android:text="@string/TO_ENTER"
         app:layout_constraintTop_toTopOf="@id/image_access"
         app:layout_constraintBottom_toBottomOf="@id/image_access"
         app:layout_constraintStart_toStartOf="@id/image_access"
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/ainda_nao_tem_cadastro"
+        android:text="@string/NO_REGISTRATION_STILL"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/cadastre_se"
+        android:text="@string/REGISTER"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
