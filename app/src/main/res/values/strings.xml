@@ -44,6 +44,8 @@
     <string name="WISH_TO_EXIT_WITHOUT_SAVING">Deseja sair sem salvar os dados alterados?</string>
     <string name="DATA_NOT_CHANGED">Os dados não foram alterados</string>
     <string name="DELETE_RECORD">Excluir registro</string>
+    <string name="INITIAL">Inicial</string>
+    <string name="USER">Usuário</string>
 
     <string-array name="CATEGORY">
         <item>Almofada</item>
@@ -58,4 +60,7 @@
         <item>Confecção</item>
         <item>Reforma</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="LOGOUT">Logout</string>
 </resources>
