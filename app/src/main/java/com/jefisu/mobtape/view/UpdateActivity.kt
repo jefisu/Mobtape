@@ -26,6 +26,7 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Mobtape)
         binding = ActivityUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

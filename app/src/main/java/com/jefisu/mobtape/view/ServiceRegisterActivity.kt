@@ -25,6 +25,7 @@ class ServiceRegisterActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Mobtape)
         binding = ActivityServiceRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

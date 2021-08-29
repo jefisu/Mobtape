@@ -18,6 +18,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Mobtape)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

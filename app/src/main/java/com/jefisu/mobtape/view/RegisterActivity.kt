@@ -22,6 +22,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Mobtape)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
