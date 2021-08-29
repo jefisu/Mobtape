@@ -25,11 +25,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             supportActionBar!!.hide()
         }
 
+        //Instancia da ViewModel
         mViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        // Inicializa eventos
-        listeners();
+        // Cria os observadores
         observe()
+
+        //Eventos
+        listeners()
 
         // Verifica se usuário está logado
         verifyLoggedUser()
@@ -66,16 +69,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     /**
-     * Autentica usuário
-     */
-    private fun handleLogin() {
-        val email = binding.textLogin.text.toString()
-        val password = binding.textPassword.text.toString()
-
-        mViewModel.doLogin(email, password)
-    }
-
-    /**
      * Inicializa os eventos de click
      */
     private fun listeners() {
@@ -91,5 +84,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             finish()
         }
+    }
+
+    /**
+     * Autentica usuário
+     */
+    private fun handleLogin() {
+        val email = binding.textLogin.text.toString()
+        val password = binding.textPassword.text.toString()
+
+        mViewModel.doLogin(email, password)
     }
 }

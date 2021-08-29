@@ -18,8 +18,10 @@
             android:exported="true" />
         <activity
             android:name=".view.MainActivity"
-            android:label="Home"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Home" />
+        <activity android:name=".view.ServiceRegisterActivity" />
+        <activity android:name=".view.UpdateActivity" />
         <activity
             android:name=".view.LoginActivity"
             android:exported="true">

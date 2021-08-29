@@ -13,6 +13,7 @@ import com.jefisu.mobtape.service.repository.local.SharedPreferences
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
+    // Acesso a dados
     private val mUserRepository = UserRepository(application)
     private val mSharedPreferences = SharedPreferences(application)
 

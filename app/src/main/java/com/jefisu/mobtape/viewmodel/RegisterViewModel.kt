@@ -13,12 +13,16 @@ import com.jefisu.mobtape.service.repository.local.SharedPreferences
 
 class RegisterViewModel(application: Application) : AndroidViewModel(application) {
 
+    // Acesso a dados
     private val mUserRepository = UserRepository(application)
     private val mSharedPreferences = SharedPreferences(application)
 
     private val mCreate = MutableLiveData<ValidationListener>()
     val create: LiveData<ValidationListener> = mCreate
 
+    /**
+     * Salva um novo usuário
+     * */
     fun insertUser(name: String, email: String, password: String) {
         mUserRepository.create(name, email, password, object : APIListener {
             override fun onSucess(result: HeaderModel) {

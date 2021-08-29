@@ -18,5 +18,17 @@ class MobConstants {
         object HTTP {
             const val SUCCESS = 200
         }
+
+        object SERVICES {
+
+            object COLUMNS {
+                const val ID = "_id"
+                const val CLIENT = "client"
+                const val CPF = "cpf"
+                const val PHONE = "phone"
+                const val TYPE = "typeService"
+                const val CATEGORY = "category"
+            }
+        }
     }
 }

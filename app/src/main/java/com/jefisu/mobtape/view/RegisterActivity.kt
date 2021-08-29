@@ -25,17 +25,23 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener,
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Instancia da ViewModel
         mViewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
 
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }
 
-        // Inicializa eventos
+        //Eventos
         listeners()
+
+        // Cria os observadores
         observe()
     }
 
+    /**
+     * Cria os observadores
+     */
     private fun observe() {
         mViewModel.create.observe(this, Observer {
             if (it.success()) {

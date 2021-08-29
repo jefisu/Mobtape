@@ -39,13 +39,15 @@
     <string name="GOOD_SEE_YOU_AGAIN">Prazer em ver você de novo!</string>
     <string name="LOG_IN">Login</string>
     <string name="FORGOT_PASSWORD">Esqueci a senha</string>
-    <string name="DO_YOU_WANT_TO_DELETE_THE_SERVICE">Tem certeza de que deseja excluir o serviço?</string>
-    <string name="EXIT_WITHOUT_SAVING">Sair sem salvar</string>
-    <string name="WISH_TO_EXIT_WITHOUT_SAVING">Deseja sair sem salvar os dados alterados?</string>
+    <string name="DO_YOU_WANT_TO_DELETE_THE_SERVICE">Deseja excluir o serviço?</string>
     <string name="DATA_NOT_CHANGED">Os dados não foram alterados</string>
     <string name="DELETE_RECORD">Excluir registro</string>
     <string name="INITIAL">Inicial</string>
     <string name="USER">Usuário</string>
+    <string name="REMOVE">Remover</string>
+
+    <string name="REFORM">Reforma</string>
+    <string name="CONFECTION">Confecção</string>
 
     <string-array name="CATEGORY">
         <item>Almofada</item>
@@ -56,11 +58,7 @@
         <item>Poltrona</item>
         <item>Sofá</item>
     </string-array>
-    <string-array name="TYPE">
-        <item>Confecção</item>
-        <item>Reforma</item>
-    </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="LOGOUT">Logout</string>
+    <string name="PHONE">Celular</string>
 </resources>
