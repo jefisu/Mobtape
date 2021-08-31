@@ -1,15 +1,15 @@
 package com.jefisu.mobtape.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.CompoundButton
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.databinding.ActivityRegisterBinding
 import com.jefisu.mobtape.viewmodel.RegisterViewModel
@@ -46,8 +46,8 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener,
                 overridePendingTransition(R.anim.in_out_enter, R.anim.in_out_exit)
                 finish()
             } else {
-                val message = it.failure()
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.constraintRegister, it.failure(), Snackbar.LENGTH_SHORT)
+                    .show()
             }
         })
     }

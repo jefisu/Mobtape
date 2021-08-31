@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.databinding.ActivityLoginBinding
 import com.jefisu.mobtape.viewmodel.LoginViewModel
@@ -45,8 +46,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 overridePendingTransition(R.anim.in_out_enter, R.anim.in_out_exit)
                 finish()
             } else {
-                val message = it.failure()
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                Snackbar.make(binding.constraintLogin, it.failure(), Snackbar.LENGTH_SHORT)
+                    .show()
             }
         })
         mViewModel.loggedUser.observe(this, Observer {

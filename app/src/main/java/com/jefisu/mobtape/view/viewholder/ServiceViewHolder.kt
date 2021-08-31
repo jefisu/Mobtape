@@ -3,6 +3,7 @@ package com.jefisu.mobtape.view.viewholder
 import android.app.AlertDialog
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.service.listener.ServiceListener
@@ -33,6 +34,7 @@ class ServiceViewHolder(view: View, val listener: ServiceListener) : RecyclerVie
                 .setMessage(it.context.getString(R.string.DO_YOU_WANT_TO_DELETE_THE_SERVICE))
                 .setPositiveButton(it.context.getString(R.string.REMOVE)) { dialog, _ ->
                     listener.onDelete(id!!)
+                    Toast.makeText(it.context, "Excluido com sucesso", Toast.LENGTH_SHORT).show()
                 }
                 .setNeutralButton(it.context.getString(R.string.CANCEL), null)
                 .show()
@@ -40,3 +42,5 @@ class ServiceViewHolder(view: View, val listener: ServiceListener) : RecyclerVie
         }
     }
 }
+
+

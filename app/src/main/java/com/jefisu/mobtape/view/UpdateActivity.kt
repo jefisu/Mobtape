@@ -3,12 +3,12 @@ package com.jefisu.mobtape.view
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.github.rtoshiro.util.format.SimpleMaskFormatter
 import com.github.rtoshiro.util.format.text.MaskTextWatcher
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.databinding.ActivityUpdateBinding
@@ -96,7 +96,11 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
         })
 
         mViewModel.updateService.observe(this, Observer {
-            if (!it) Toast.makeText(this, "Falha", Toast.LENGTH_SHORT).show()
+            if (!it) Snackbar.make(
+                binding.constraintUpdate,
+                "Erro ao atualizar",
+                Snackbar.LENGTH_SHORT
+            ).show()
             else finish()
         })
     }

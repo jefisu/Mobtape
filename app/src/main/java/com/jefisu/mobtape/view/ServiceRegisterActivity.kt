@@ -3,12 +3,12 @@ package com.jefisu.mobtape.view
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.github.rtoshiro.util.format.SimpleMaskFormatter
 import com.github.rtoshiro.util.format.text.MaskTextWatcher
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.databinding.ActivityServiceRegisterBinding
@@ -33,7 +33,6 @@ class ServiceRegisterActivity : AppCompatActivity(),
         setSupportActionBar(binding.myToolBar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-
         }
 
         //Instancia da ViewModel
@@ -58,7 +57,11 @@ class ServiceRegisterActivity : AppCompatActivity(),
             if (it) {
                 finish()
             } else {
-                Toast.makeText(this, "Erro ao inserir", Toast.LENGTH_SHORT).show()
+                Snackbar.make(
+                    binding.constraintServiceRegister,
+                    "Erro ao inserir",
+                    Snackbar.LENGTH_SHORT
+                ).show()
             }
         })
     }
@@ -102,7 +105,7 @@ class ServiceRegisterActivity : AppCompatActivity(),
 
     /**
      * Máscara de formatação para Celular/CPF
-    **/
+     **/
     private fun formatMask(textEdit: TextInputEditText, mask: String) {
         val simpleMaskFormatter = SimpleMaskFormatter(mask)
         val maskTextWatcher = MaskTextWatcher(textEdit, simpleMaskFormatter)

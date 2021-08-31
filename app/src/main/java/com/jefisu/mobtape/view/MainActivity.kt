@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -51,8 +50,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun listeners() {
         binding.fabAdd.setOnClickListener {
-            val intent = Intent(this, ServiceRegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(
+                Intent(this, ServiceRegisterActivity::class.java)
+            )
         }
     }
 
