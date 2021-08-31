@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background_login"
+    android:background="@drawable/background_login"
     tools:context=".view.LoginActivity">
 
     <ImageView
@@ -29,29 +29,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/fillFields"
         android:layout_marginStart="42dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="42dp"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:boxStrokeColor="@color/black"
-        app:endIconMode="clear_text"
-        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/view"
+        app:layout_constraintStart_toStartOf="@id/view"
         app:layout_constraintTop_toTopOf="@id/view">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textTheme"
             android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="8dp"
-            android:drawableTint="#777695"
-            android:fontFamily="@font/open_sans"
             android:hint="@string/EMAIL"
             android:inputType="textEmailAddress"
             android:textSize="20sp" />
@@ -60,30 +49,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/fillFields"
         android:layout_marginStart="42dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="42dp"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:boxStrokeColor="@color/black"
         app:endIconMode="password_toggle"
-        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/view"
+        app:layout_constraintStart_toStartOf="@id/view"
         app:layout_constraintTop_toBottomOf="@id/text_input_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textTheme"
             android:drawableStart="@drawable/ic_lock"
-            android:drawablePadding="8dp"
-            android:drawableTint="#777695"
             android:hint="@string/PASSWORD"
-            android:fontFamily="@font/open_sans"
             android:inputType="textPassword"
             android:textSize="20sp" />
 
@@ -102,26 +81,20 @@
         app:layout_constraintEnd_toEndOf="@id/text_input_password"
         app:layout_constraintTop_toBottomOf="@id/text_input_password" />
 
-
-    <ImageView
+    <ImageButton
         android:id="@+id/image_access"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_esqueci_senha"
         android:layout_marginTop="42dp"
+        android:background="@android:color/transparent"
         android:src="@drawable/ic_button_login"
         app:layout_constraintEnd_toEndOf="@id/text_input_password"
         app:layout_constraintStart_toStartOf="@id/text_input_password"
         app:layout_constraintTop_toBottomOf="@+id/text_input_password" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/textButtonTheme"
         android:text="@string/TO_ENTER"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:fontFamily="@font/open_sans"
         app:layout_constraintBottom_toBottomOf="@id/image_access"
         app:layout_constraintEnd_toEndOf="@id/image_access"
         app:layout_constraintStart_toStartOf="@id/image_access"
@@ -134,7 +107,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/open_sans"
-
         android:text="@string/NO_REGISTRATION_STILL"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -146,6 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:fontFamily="@font/open_sans"
         android:text="@string/REGISTER"
         android:textColor="@color/white"
         android:textSize="18sp"

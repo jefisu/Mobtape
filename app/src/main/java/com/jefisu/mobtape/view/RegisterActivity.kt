@@ -57,14 +57,14 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener,
     }
 
     private fun listeners() {
-        binding.buttonRegister.setOnClickListener(this)
+        binding.imageRegister.setOnClickListener(this)
         binding.imageBack.setOnClickListener(this)
         binding.checkShowPassword.setOnCheckedChangeListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.button_register -> {
+            R.id.image_register -> {
                 val name = binding.textName.text.toString()
                 val email = binding.textEmail.text.toString()
                 val password = binding.textPasswordR.text.toString()

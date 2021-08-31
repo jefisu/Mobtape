@@ -4,51 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/background_login"
     android:padding="8dp"
     tools:context=".view.ServiceRegisterActivity">
 
     <ImageView
         android:id="@+id/image_back_sr"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back"
-        app:tint="@color/black" />
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/text_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/textLabelTheme"
         android:text="@string/REGISTER_RECORD"
-        android:textColor="@color/black"
-        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image_back_sr" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInput_client"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:endIconMode="clear_text"
+        style="@style/fillFields"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_label"
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_client_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textTheme"
             android:hint="@string/CLIENT"
             android:inputType="text"
             tools:text="Jeferson" />
@@ -57,123 +44,96 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInput_cpf"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:endIconMode="clear_text"
+        style="@style/fillFields"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInput_client"
-        app:startIconDrawable="@drawable/card_identity">
+        app:startIconDrawable="@drawable/ic_document_identify">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_cpf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textTheme"
             android:hint="@string/CPF"
             android:inputType="numberSigned"
-            tools:text="12345678900" />
+            tools:text="123.456.789-0" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInput_phone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:endIconMode="clear_text"
+        style="@style/fillFields"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInput_cpf"
-        app:prefixText="+55"
         app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textTheme"
             android:hint="@string/PHONE"
             android:inputType="numberSigned"
-            tools:text="11123456789" />
+            tools:text="+55 (11) 91234-5678" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        app:boxCornerRadiusBottomEnd="10dp"
         android:id="@+id/textInput_category"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
+        style="@style/fillFields"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:endIconMode="dropdown_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInput_phone"
         app:startIconDrawable="@drawable/ic_design_services">
 
         <AutoCompleteTextView
             android:id="@+id/autoComplete_category"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/textTheme"
             android:hint="@string/CATEGORY"
             android:inputType="none"
-            android:text="Almofada" />
+            android:text="@string/PAD" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:id="@+id/radio_group"
-        android:layout_marginTop="16dp"
+        style="@style/radioGroupTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInput_category">
 
         <RadioButton
             android:id="@+id/radio_confection"
-            android:layout_width="wrap_content"
-            android:text="@string/CONFECTION"
-            android:textSize="16sp"
+            style="@style/radioButtonTheme"
             android:layout_marginEnd="16dp"
-            android:layout_height="wrap_content" />
+            android:text="@string/CONFECTION"
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radio_reform"
-            android:layout_width="wrap_content"
-            android:text="@string/REFORM"
-            android:textSize="16sp"
+            style="@style/radioButtonTheme"
             android:layout_marginStart="16dp"
-            android:layout_height="wrap_content" />
+            android:text="@string/REFORM"
+            android:textSize="20sp" />
 
     </RadioGroup>
 
-    <Button
-        android:id="@+id/button_register_sr"
+    <ImageButton
+        android:id="@+id/image_register_sr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/ripple_button"
-        android:paddingStart="36dp"
-        android:paddingEnd="36dp"
-        android:text="@string/RECORD"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_button_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        style="@style/textButtonTheme"
+        android:text="@string/RECORD"
+        app:layout_constraintBottom_toBottomOf="@id/image_register_sr"
+        app:layout_constraintEnd_toEndOf="@id/image_register_sr"
+        app:layout_constraintStart_toStartOf="@id/image_register_sr"
+        app:layout_constraintTop_toTopOf="@id/image_register_sr" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

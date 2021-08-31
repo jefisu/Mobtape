@@ -62,7 +62,7 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
 
     private fun listeners() {
         binding.imageBackUpdate.setOnClickListener { finish() }
-        binding.buttonUpdate.setOnClickListener {
+        binding.imageUpdate.setOnClickListener {
             val service = ServiceModel(
                 id = mServiceId,
                 client = binding.textClientUpdate.text.toString(),
@@ -112,7 +112,7 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
      * Atribuindo a formatação aos elementos
      */
     private fun formatMethods() {
-        formatMask(binding.textPhoneUpdate, "(NN) NNNNN-NNNN")
+        formatMask(binding.textPhoneUpdate, "+NN (NN) NNNNN-NNNN")
         formatMask(binding.textCpfUpdate, "NNN.NNN.NNN-NN")
         selectedDropDown()
     }

@@ -74,7 +74,7 @@ class ServiceRegisterActivity : AppCompatActivity(),
 
     private fun listeners() {
         binding.imageBackSr.setOnClickListener { finish() }
-        binding.buttonRegisterSr.setOnClickListener {
+        binding.imageRegisterSr.setOnClickListener {
             val service = ServiceModel(
                 id = null,
                 client = binding.textClientService.text.toString(),
@@ -94,7 +94,7 @@ class ServiceRegisterActivity : AppCompatActivity(),
     private fun formatMethods() {
         selectedDropDown()
         formatMask(binding.textCpf, "NNN.NNN.NNN-NN")
-        formatMask(binding.textPhone, "(NN) NNNNN-NNNN")
+        formatMask(binding.textPhone, "+NN (NN) NNNNN-NNNN")
     }
 
     /**
