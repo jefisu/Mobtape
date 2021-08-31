@@ -22,10 +22,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (supportActionBar != null) {
-            supportActionBar!!.hide()
-        }
-
         //Instancia da ViewModel
         mViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 

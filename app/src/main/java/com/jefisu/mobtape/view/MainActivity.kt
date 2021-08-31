@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Toolbar
+        setSupportActionBar(binding.myToolBar)
+
         //Instanciando a ViewModel
         mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 

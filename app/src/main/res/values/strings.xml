@@ -10,7 +10,7 @@
     <string name="REGISTER_RECORD">Cadastrar serviço</string>
     <string name="CATEGORY">Categoria</string>
     <string name="RECORD">Cadastrar</string>
-    <string name="UPDATE">ATUALIZAR</string>
+    <string name="UPDATE">Atualizar</string>
     <string name="CANCEL">CANCELAR</string>
     <string name="UPDATE_RECORD">Atualiza registro</string>
     <string name="FILL_IN_THE_FIELDS">Preencha os campos</string>
@@ -62,4 +62,5 @@
     <string name="LOGOUT">Logout</string>
     <string name="PHONE">Celular</string>
     <string name="PAD">Almofada</string>
+    <string name="INSERT">Inserir</string>
 </resources>

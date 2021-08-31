@@ -29,10 +29,6 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener,
         //Instancia da ViewModel
         mViewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
 
-        if (supportActionBar != null) {
-            supportActionBar!!.hide()
-        }
-
         //Eventos
         listeners()
 

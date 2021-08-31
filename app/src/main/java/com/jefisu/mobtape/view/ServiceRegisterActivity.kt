@@ -29,11 +29,15 @@ class ServiceRegisterActivity : AppCompatActivity(),
         binding = ActivityServiceRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Toolbar
+        setSupportActionBar(binding.myToolBar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+
+        }
+
         //Instancia da ViewModel
         mViewModel = ViewModelProvider(this).get(ServiceRegisterViewModel::class.java)
-
-        /** Escoder a supportActionBar **/
-        supportActionBar!!.hide()
 
         // Eventos
         listeners()
@@ -73,7 +77,6 @@ class ServiceRegisterActivity : AppCompatActivity(),
     }
 
     private fun listeners() {
-        binding.imageBackSr.setOnClickListener { finish() }
         binding.imageRegisterSr.setOnClickListener {
             val service = ServiceModel(
                 id = null,

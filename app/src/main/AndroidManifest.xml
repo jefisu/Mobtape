@@ -13,15 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/splashScreenTheme"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".view.RegisterActivity"
-            android:exported="true" />
+        <activity android:name=".view.RegisterActivity" />
         <activity
             android:name=".view.MainActivity"
-            android:exported="true"
-            android:label="Home" />
-        <activity android:name=".view.ServiceRegisterActivity" />
-        <activity android:name=".view.UpdateActivity" />
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".view.ServiceRegisterActivity"
+            android:parentActivityName=".view.MainActivity" />
+        <activity
+            android:name=".view.UpdateActivity"
+            android:parentActivityName=".view.MainActivity" />
         <activity
             android:name=".view.LoginActivity"
             android:exported="true">

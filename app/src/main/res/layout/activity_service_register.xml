@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login"
-    android:padding="8dp"
     tools:context=".view.ServiceRegisterActivity">
 
-    <ImageView
-        android:id="@+id/image_back_sr"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back"
-        app:tint="@color/white" />
-
-    <TextView
-        android:id="@+id/text_label"
-        style="@style/textLabelTheme"
-        android:text="@string/REGISTER_RECORD"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_back_sr" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/myToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#918F91"
+            android:minHeight="?attr/actionBarSize"
+            app:title="@string/INSERT"
+            app:titleTextColor="#454444" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInput_client"
         style="@style/fillFields"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_label"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText

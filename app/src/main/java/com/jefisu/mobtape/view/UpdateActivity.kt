@@ -30,11 +30,14 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
         binding = ActivityUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Toolbar
+        setSupportActionBar(binding.myToolBar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+        }
+
         //Instanciando a ViewModel
         mViewModel = ViewModelProvider(this).get(UpdateViewModel::class.java)
-
-        /** Escoder a supportActionBar **/
-        supportActionBar!!.hide()
 
         // Eventos
         listeners()
@@ -61,7 +64,6 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
     }
 
     private fun listeners() {
-        binding.imageBackUpdate.setOnClickListener { finish() }
         binding.imageUpdate.setOnClickListener {
             val service = ServiceModel(
                 id = mServiceId,
