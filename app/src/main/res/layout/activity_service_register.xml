@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/constraintServiceRegister"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ServiceRegisterActivity">
 
@@ -19,11 +19,11 @@
             android:id="@+id/myToolBar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#918F91"
+            android:background="@drawable/color_app"
             android:minHeight="?attr/actionBarSize"
+            android:theme="@style/toolbarTheme"
             app:title="@string/INSERT"
-            app:titleTextColor="#454444" />
-
+            app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -121,7 +121,7 @@
         android:id="@+id/image_register_sr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_button_login"
         app:layout_constraintBottom_toBottomOf="parent"

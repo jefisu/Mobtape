@@ -19,6 +19,10 @@
         <item name="android:statusBarColor">@color/black</item>
     </style>
 
+    <style name="toolbarTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
     <style name="fillFields" parent="Base.Widget.MaterialComponents.TextInputLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

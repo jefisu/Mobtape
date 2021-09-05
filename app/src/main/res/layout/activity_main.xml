@@ -18,12 +18,13 @@
             android:id="@+id/myToolBar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#918F91"
+            android:background="@drawable/color_app"
             android:minHeight="?attr/actionBarSize"
+            android:theme="@style/toolbarTheme"
             app:logo="@drawable/ic_logo_custom"
             app:title="Mobtape"
             app:titleMarginStart="24dp"
-            app:titleTextColor="#454444" />
+            app:titleTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -44,7 +45,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/ic_add"
-        app:backgroundTint="@color/black"
+        android:backgroundTint="#454444"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="40dp" />

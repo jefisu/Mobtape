@@ -69,6 +69,7 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
                 id = mServiceId,
                 client = binding.textClientUpdate.text.toString(),
                 cpf = binding.textCpfUpdate.text.toString(),
+                phone = binding.textPhoneUpdate.text.toString(),
                 type = selectedType,
                 category = selectedCategory
             )
