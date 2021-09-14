@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.jefisu.mobtape.service.constants.MobConstants.Companion.SHARED
 import com.jefisu.mobtape.service.listener.APIListener
 import com.jefisu.mobtape.service.listener.ValidationListener
-import com.jefisu.mobtape.service.model.HeaderModel
+import com.jefisu.mobtape.service.dto.UserDto
 import com.jefisu.mobtape.service.repository.UserRepository
 import com.jefisu.mobtape.service.repository.local.SharedPreferences
 
@@ -28,7 +28,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
      */
     fun doLogin(email: String, password: String) {
         mUserRepository.login(email, password, object : APIListener {
-            override fun onSucess(result: HeaderModel) {
+            override fun onSucess(result: UserDto) {
                 mSharedPreferences.save(SHARED.TOKEN_KEY, result.token)
                 mSharedPreferences.save(SHARED.USER_KEY, result.userKey)
                 mSharedPreferences.save(SHARED.USER_NAME, result.name)

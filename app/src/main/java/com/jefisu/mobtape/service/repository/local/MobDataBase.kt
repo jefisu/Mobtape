@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 
-@Database(entities = [ServiceModel::class], version = 1)
+@Database(entities = [ServiceDto::class], version = 1)
 abstract class MobDataBase: RoomDatabase() {
 
     abstract fun dao(): ServiceDAO

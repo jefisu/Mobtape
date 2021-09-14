@@ -117,6 +117,28 @@
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/colorCustom"
+        android:hint="@string/DATE"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"
+        tools:text="03/02/2021" />
+
     <ImageButton
         android:id="@+id/image_register_sr"
         android:layout_width="wrap_content"

@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 import com.jefisu.mobtape.service.repository.local.ServiceRepository
 
 class UpdateViewModel(application: Application) : AndroidViewModel(application) {
@@ -12,8 +12,8 @@ class UpdateViewModel(application: Application) : AndroidViewModel(application) 
     // Acesso a dados
     private var mRepository = ServiceRepository(application.applicationContext)
 
-    private val mService = MutableLiveData<ServiceModel>()
-    val service: LiveData<ServiceModel> = mService
+    private val mService = MutableLiveData<ServiceDto>()
+    val service: LiveData<ServiceDto> = mService
 
     private val mUpdateService = MutableLiveData<Boolean>()
     val updateService: LiveData<Boolean> = mUpdateService
@@ -28,7 +28,7 @@ class UpdateViewModel(application: Application) : AndroidViewModel(application) 
     /**
      * Atualiza o serviço
      */
-    fun update(service: ServiceModel) {
+    fun update(service: ServiceDto) {
         mUpdateService.value = mRepository.update(service)
     }
 }

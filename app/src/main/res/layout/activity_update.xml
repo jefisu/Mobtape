@@ -80,8 +80,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInput_category"
         style="@style/fillFields"
+        app:endIconMode="none"
         android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        app:endIconMode="dropdown_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_input_phone_update"
@@ -118,6 +118,28 @@
             android:textSize="20sp" />
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/colorCustom"
+        android:hint="@string/DATE"
+        android:paddingStart="30dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"
+        tools:text="03/02/2021" />
 
     <ImageButton
         android:id="@+id/image_update"

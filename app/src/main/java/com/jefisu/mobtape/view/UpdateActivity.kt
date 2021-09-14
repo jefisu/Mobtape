@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.databinding.ActivityUpdateBinding
 import com.jefisu.mobtape.service.constants.MobConstants.Companion.SERVICES
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 import com.jefisu.mobtape.viewmodel.UpdateViewModel
 
 class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
@@ -65,13 +65,13 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
 
     private fun listeners() {
         binding.imageUpdate.setOnClickListener {
-            val service = ServiceModel(
+            val service = ServiceDto(
                 id = mServiceId,
                 client = binding.textClientUpdate.text.toString(),
                 cpf = binding.textCpfUpdate.text.toString(),
                 phone = binding.textPhoneUpdate.text.toString(),
                 type = selectedType,
-                category = selectedCategory
+                category = selectedCategory,
             )
             mViewModel.update(service)
         }
@@ -88,6 +88,7 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
             binding.textCpfUpdate.setText(it.cpf)
             binding.textPhoneUpdate.setText(it.phone)
             binding.autoCompleteCategory.setText(it.category)
+            binding.textDate.text = it.date
 
             if (it.type == getString(R.string.REFORM)) {
                 binding.radioReform.isChecked = true
@@ -121,7 +122,6 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
     private fun formatMethods() {
         formatMask(binding.textPhoneUpdate, "+NN (NN) NNNNN-NNNN")
         formatMask(binding.textCpfUpdate, "NNN.NNN.NNN-NN")
-        selectedDropDown()
     }
 
     /**
@@ -131,25 +131,5 @@ class UpdateActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
         val simpleMaskFormatter = SimpleMaskFormatter(mask)
         val maskTextWatcher = MaskTextWatcher(textEdit, simpleMaskFormatter)
         textEdit.addTextChangedListener(maskTextWatcher)
-    }
-
-    /**
-     * Definindo o Adapter, e configurando para exibir a lista de Arrays na tela
-     * **/
-    private fun selectedDropDown() {
-        val res = resources.getStringArray(R.array.CATEGORY)
-        val arrayAdapter = ArrayAdapter(applicationContext, R.layout.dropdown_item, res)
-        binding.autoCompleteCategory.setAdapter(arrayAdapter)
-
-        //Default
-        selectedCategory = ""
-        if (selectedCategory.isEmpty()) {
-            selectedCategory = "Almofada"
-        }
-
-        // Salvando item escolhido no Banco de Dados
-        binding.autoCompleteCategory.setOnItemClickListener { _, _, position, _ ->
-            selectedCategory = res[position]
-        }
     }
 }

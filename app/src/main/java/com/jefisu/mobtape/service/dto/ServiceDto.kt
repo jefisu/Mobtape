@@ -1,11 +1,13 @@
-package com.jefisu.mobtape.service.model
+package com.jefisu.mobtape.service.dto
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.text.DateFormat
+import java.util.*
 
 @Entity(tableName = "Service")
-data class ServiceModel(
+data class ServiceDto(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
@@ -26,4 +28,6 @@ data class ServiceModel(
     @ColumnInfo(name = "category")
     var category: String = "",
 
+    @ColumnInfo(name = "date")
+    var date: String = "",
     )

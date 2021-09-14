@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.service.listener.ServiceListener
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 import com.jefisu.mobtape.view.viewholder.ServiceViewHolder
 
 class ServiceAdapter(
@@ -13,12 +13,12 @@ class ServiceAdapter(
 ) : RecyclerView.Adapter<ServiceViewHolder>() {
 
     // Lista de serviços
-    private var mList = listOf<ServiceModel>()
+    private var mList = listOf<ServiceDto>()
 
     /**
      * Atualização da lista de serviços
      */
-    fun updateList(list: List<ServiceModel>) {
+    fun updateList(list: List<ServiceDto>) {
         mList = list
         notifyDataSetChanged()
     }

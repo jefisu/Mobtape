@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 import com.jefisu.mobtape.service.repository.local.ServiceRepository
 
 class ServiceRegisterViewModel(application: Application) : AndroidViewModel(application) {
@@ -18,7 +18,7 @@ class ServiceRegisterViewModel(application: Application) : AndroidViewModel(appl
     /**
      * Salva o serviço
      * */
-    fun save(service: ServiceModel) {
+    fun save(service: ServiceDto) {
         mSaveService.value = mRepository.save(service)
     }
 }

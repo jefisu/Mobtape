@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.service.listener.ServiceListener
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 
 class ServiceViewHolder(view: View, val listener: ServiceListener) : RecyclerView.ViewHolder(view) {
 
@@ -16,7 +16,7 @@ class ServiceViewHolder(view: View, val listener: ServiceListener) : RecyclerVie
     private val textKindOfService = itemView.findViewById<TextView>(R.id.text_type_service)
     private val textCategory = itemView.findViewById<TextView>(R.id.text_category)
 
-    fun bindData(service: ServiceModel) {
+    fun bindData(service: ServiceDto) {
 
         // Atribui valores
         textCategory.text = service.category

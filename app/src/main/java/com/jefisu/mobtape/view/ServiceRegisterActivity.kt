@@ -1,7 +1,9 @@
 package com.jefisu.mobtape.view
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -12,16 +14,23 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.jefisu.mobtape.R
 import com.jefisu.mobtape.databinding.ActivityServiceRegisterBinding
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 import com.jefisu.mobtape.viewmodel.ServiceRegisterViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ServiceRegisterActivity : AppCompatActivity(),
-    RadioGroup.OnCheckedChangeListener {
+    RadioGroup.OnCheckedChangeListener, DatePickerDialog.OnDateSetListener {
 
     private lateinit var binding: ActivityServiceRegisterBinding
     private lateinit var selectedType: String
     private lateinit var selectedCategory: String
     private lateinit var mViewModel: ServiceRegisterViewModel
+
+    // Configurando a formatação da data
+    private val mBrazilLocale = Locale("pt", "br")
+    private val mSimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", mBrazilLocale)
+    private lateinit var date: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,18 +88,42 @@ class ServiceRegisterActivity : AppCompatActivity(),
         }
     }
 
+    // Configurando a exibição do calendário
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        // Cria um calendário e atribui a data selecionada
+        val calendar = Calendar.getInstance().apply {
+            set(year, month, dayOfMonth)
+        }
+
+        // Converte a data selecionada para o formato imposto pelo SimpleDateFormat
+        date = mSimpleDateFormat.format(calendar.time)
+        binding.textDate.text = date
+    }
+
     private fun listeners() {
         binding.imageRegisterSr.setOnClickListener {
-            val service = ServiceModel(
+            val service = ServiceDto(
                 id = null,
                 client = binding.textClientService.text.toString(),
                 cpf = binding.textCpf.text.toString(),
                 phone = binding.textPhone.text.toString(),
                 type = selectedType,
-                category = selectedCategory
+                category = selectedCategory,
+                date = date
             )
             mViewModel.save(service)
         }
+        binding.textDate.setOnClickListener {
+            // Obtém a instância do calendário
+            val calendar = Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+            // Mostra o Datepicker utilizando os dados de hoje
+            DatePickerDialog(this, this, year, month, day).show()
+        }
+        
         binding.radioGroup.setOnCheckedChangeListener(this)
     }
 
@@ -122,7 +155,7 @@ class ServiceRegisterActivity : AppCompatActivity(),
 
         selectedCategory = ""
         if (selectedCategory.isEmpty()) {
-            selectedCategory = "Almofada"
+            selectedCategory = res[0]
         }
 
         // Salvando item escolhido no Banco de Dados

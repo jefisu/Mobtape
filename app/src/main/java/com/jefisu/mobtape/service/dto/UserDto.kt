@@ -1,8 +1,8 @@
-package com.jefisu.mobtape.service.model
+package com.jefisu.mobtape.service.dto
 
 import com.google.gson.annotations.SerializedName
 
-class HeaderModel {
+class UserDto {
 
     @SerializedName("token")
     lateinit var token: String

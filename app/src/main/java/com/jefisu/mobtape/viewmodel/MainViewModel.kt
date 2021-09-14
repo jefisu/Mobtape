@@ -5,10 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jefisu.mobtape.service.constants.MobConstants.Companion.SHARED
-import com.jefisu.mobtape.service.model.ServiceModel
+import com.jefisu.mobtape.service.dto.ServiceDto
 import com.jefisu.mobtape.service.repository.local.ServiceRepository
 import com.jefisu.mobtape.service.repository.local.SharedPreferences
-import com.jefisu.mobtape.view.adapter.ServiceAdapter
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -32,7 +31,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * Faz atualização da lista
      */
-    fun getUpdateList(): List<ServiceModel> = mRepository.loadAll()
+    fun getUpdateList(): List<ServiceDto> = mRepository.loadAll()
 
     /**
      * Faz a remoção de um serviço

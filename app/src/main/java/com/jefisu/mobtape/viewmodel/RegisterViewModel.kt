@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.jefisu.mobtape.service.constants.MobConstants
 import com.jefisu.mobtape.service.listener.APIListener
 import com.jefisu.mobtape.service.listener.ValidationListener
-import com.jefisu.mobtape.service.model.HeaderModel
+import com.jefisu.mobtape.service.dto.UserDto
 import com.jefisu.mobtape.service.repository.UserRepository
 import com.jefisu.mobtape.service.repository.local.SharedPreferences
 
@@ -25,7 +25,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
      * */
     fun insertUser(name: String, email: String, password: String) {
         mUserRepository.create(name, email, password, object : APIListener {
-            override fun onSucess(result: HeaderModel) {
+            override fun onSucess(result: UserDto) {
                 mSharedPreferences.save(MobConstants.Companion.SHARED.TOKEN_KEY, result.token)
                 mSharedPreferences.save(MobConstants.Companion.SHARED.USER_KEY, result.userKey)
                 mSharedPreferences.save(MobConstants.Companion.SHARED.USER_NAME, result.name)

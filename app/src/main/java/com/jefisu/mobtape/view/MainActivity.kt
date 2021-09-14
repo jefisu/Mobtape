@@ -14,6 +14,8 @@ import com.jefisu.mobtape.service.constants.MobConstants.Companion.SERVICES.COLU
 import com.jefisu.mobtape.service.listener.ServiceListener
 import com.jefisu.mobtape.view.adapter.ServiceAdapter
 import com.jefisu.mobtape.viewmodel.MainViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,8 +67,10 @@ class MainActivity : AppCompatActivity() {
                 val bundle = Bundle().apply {
                     putInt(COLUMNS.ID, id)
                 }
-                intent.putExtras(bundle)
-                startActivity(intent)
+                intent.apply {
+                    putExtras(bundle)
+                    startActivity(this)
+                }
             }
 
             override fun onDelete(id: Int) {
@@ -106,5 +110,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

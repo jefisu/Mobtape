@@ -1,6 +1,6 @@
 package com.jefisu.mobtape.service.repository.remote
 
-import com.jefisu.mobtape.service.model.HeaderModel
+import com.jefisu.mobtape.service.dto.UserDto
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -13,7 +13,7 @@ interface UserService {
     fun login(
         @Field("email") email: String,
         @Field("password") password: String
-    ): Call<HeaderModel>
+    ): Call<UserDto>
 
 
     @POST("Authentication/Create")
@@ -22,7 +22,7 @@ interface UserService {
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ): Call<HeaderModel>
+    ): Call<UserDto>
 
 
 }

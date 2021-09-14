@@ -63,4 +63,5 @@
     <string name="PHONE">Celular</string>
     <string name="PAD">Almofada</string>
     <string name="INSERT">Inserir</string>
+    <string name="DATE">Data</string>
 </resources>
